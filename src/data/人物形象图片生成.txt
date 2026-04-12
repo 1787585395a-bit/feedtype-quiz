@@ -1,0 +1,105 @@
+第一部分：通用基础提示词（Base Prompt）
+
+Common Base: A high-quality 3D rendered vinyl toy of a chibi character, blind box style, cute, big head, small body, expressive face, glossy finish, soft lighting, vibrant pastel colors, clean solid color background, intricate details related to the character, stylized illustration.
+
+（中文参考）： 一个高质量的3D渲染胶囊玩具，Q版人物，盲盒风格，可爱，大头，小身体，表情丰富，光面质感，柔光，鲜艳的柔和色彩，干净的纯色背景，与角色相关的复杂细节，风格化插画。
+
+第二部分：14种人格专属定制提示词
+
+1. LURK / The Silent Screenshotter (沉默截图党)
+梗核心： 偷看、 hoodie（卫衣）、手机闪光灯、Receipts（证据）。
+
+专属描述： Character wearing a dark, oversized hoodie pulled up, eyes wide and spying, hiding behind a giant floating smartphone, the smartphone is taking a screenshot with a visible flash, a tiny thought bubble with a folder icon above head, subtle and sneaky pose.
+
+（中文参考）： 角色穿着一件拉起来的深色超大卫衣，眼睛睁得大大地在偷看，躲在一个巨大的漂浮智能手机后面，智能手机正在截屏并有可见的闪光，头顶有一个带有文件夹图标的小气泡，低调而鬼鬼祟祟的姿势。
+
+2. AURA / The Soft-Launch Oracle (软官宣预言家)
+梗核心： Aesthetic（唯美）、神秘、局部、光环（Aura Points）。
+
+专属描述： Elegant chibi character with a glowing golden halo (Aura points) around their body. Holding an aesthetic coffee cup with only one ringed hand visible, face partially obscured by misty light, sparkling fragments floating around, enigmatic smile, very mindful style.
+
+（中文参考）： 优雅的Q版角色，身体周围有发光的金色光环。只有一只戴着戒指的手拿着一个唯美的咖啡杯可见，脸部部分被迷蒙的光线遮挡，闪亮的碎片在周围漂浮，神秘的微笑，非常“正念”的风格。
+
+3. REPL / The Reply-All Romantic (全场都会回的浪漫派)
+梗核心： 话痨、键盘侠（褒义）、爱心爆炸、"OMG SAME"。
+
+专属描述： Over-excited chibi character sitting on a massive, exploded keyboard. Multiple heart emojis and 'OMG SAME' speech bubbles floating around their head, sweaty but happy face, hands moving rapidly across keys like a piano player, high engagement energy.
+
+（中文参考）： 过度兴奋的Q版角色坐在一个巨大的、爆炸的键盘上。多个爱心表情符号和“OMG SAME”的气泡在头顶飘浮，汗流浃背但快乐的脸，双手像钢琴家一样在键盘上快速移动，高互动的能量。
+
+4. FEED / The Algorithm Employee (算法打工人)
+梗核心： 流量、KPI、环形灯、Viral（爆火）。
+
+专属描述： Tired but efficient chibi character wearing an 'ALGO' uniform. Holding a ring light and a camera on a tripod. Circular progress bars labeled 'VIRAL', 'LIKES', and 'KPI' floating around, dynamic pose capturing mundane life to look iconic.
+
+（中文参考）： 疲惫但高效的Q版角色穿着“ALGO”制服。拿着环形灯和三脚架上的相机。周围飘浮着标记为“Viral”、“Likes”和“KPI”的圆形进度条，动态的姿势，捕捉普通的日常生活使其看起来具有标志性。
+
+5. CRSH / The Crashout Commenter (评论区爆发型选手)
+梗核心： 破防（Crashout）、 Receipts、愤怒、"Be Real"。
+
+专属描述： Furious chibi character with steam from ears and glowing red eyes. Slamming a giant fist onto a laptop keyboard, a long scroll of 'RECEIPTS' (evidence) spilling from the desk, a tiny thought bubble with a flaming skull, chaotic battle atmosphere in the comments section.
+
+（中文参考）： 愤怒的Q版角色，耳朵冒烟，眼睛发红。一只巨大的拳头重重地砸在笔记本电脑键盘上，一长卷“Receipts”（证据）从桌子上洒落，头顶有一个带着火焰头骨的小气泡，评论区有混乱的战斗氛围。
+
+6. COPE / The Thread Philosopher (长帖哲学家)
+梗核心： Yapping（长篇大论）、 Meta（元评论）、悲伤、"It is what it is"。
+
+专属描述： Melancholic but stylish chibi character with a dramatic, flowing scarf and glasses. Sitting in a "Thinking Man" pose on top of a massive pile of text bubbles, a thought bubble above head with a complex diagram labeled 'COPE', cynical but intellectual expression.
+
+（中文参考）： 忧郁但时尚的Q版角色，戴着夸张的流苏围巾和眼镜。以“思想者”的姿势坐在一大堆气泡上面，头顶有一个小气泡，里面是一个标记为“COPE”的复杂图表，讽刺但理智的表情。
+
+7. DELU / The Main Character Intern (主角感实习生)
+梗核心： Delusional（幻觉）、主角光环、红毯、电影滤镜。
+
+专属描述： Sparkling chibi character walking with a red carpet that spontaneously appears beneath their feet. Wearing a tiara and impractical glamorous outfit, eyes closed in bliss, surrounded by floating movie cameras and spotlights, dynamic background music notes, high Main Character Energy.
+
+（中文参考）： 闪闪发光的Q版角色走在一条自发出现在脚下的红地毯上。戴着皇冠和不切实际的华丽服装，幸福地闭着眼睛，被漂浮的电影摄像机和聚光灯包围，背景有动态的音乐符号，高“主角能量”。
+
+8. MUTE / The Seen-Zone Specialist (已读区专家)
+梗核心： 已读不回（Seen）、幽灵化、墨镜、Unbothered。
+
+专属描述： Cool, unbothered chibi character wearing sunglasses inside. Sitting comfortably with legs crossed, a phone on the side explodes with ignored notifications, a thought bubble above head showing a 'SEEN' receipt but ignoring it, relaxed pose.
+
+（中文参考）： 酷、无所谓的Q版角色，戴着墨镜在室内。舒服地跷着二腿坐着，旁边的手机因为被无视的通知而爆炸，头顶有一个小气泡，显示一个“Seen”已读收据但无视它，放松的姿势。
+
+9. CTRL / The Hard-Launch Planner (硬官宣策划师)
+梗核心： 控制、Hard-launch、Storyboard（分镜）、手表。
+
+专属描述： Serious chibi character holding a stopwatch and a whiteboard with charts and timelines labeled 'THE LAUNCH'. Precisely pulling a black curtain off a giant photo of a couple/new car, dramatic lighting reveal, confident and managerial expression.
+
+（中文参考）： 严肃的Q版角色，拿着秒表和一块带有图表和时间线的白板，白板上标记着“The Launch”。精准地从一张巨大的情侣/新车照片上拉下一块黑幕，戏剧性的灯光揭幕，自信的管理表情。
+
+10. COOK / The Group Chat Instigator (群聊拱火发动机)
+梗核心： Let him cook（让他展示/拱火）、点火、Dynamite（炸药）、GC Plans。
+
+专属描述： Mischievous chibi character wearing a chef's hat and apron labeled 'LET HIM COOK'. Stirring a giant bubbling cauldron labeled 'GROUP CHAT PLANS' with tiny explosive symbols in it, a lighter in hand, dynamic background with a mild explosion, grin face.
+
+（中文参考）： 顽皮的Q版角色穿着主厨帽和标记为“Let him cook”的围裙。正在搅拌一个标记为“Group Chat Plans”的巨大冒泡坩埚，坩埚里有微小的爆炸符号，手里拿着一个打火机，动态的背景有轻微的爆炸， grinning（咧嘴笑）的脸。
+
+11. NPCX / The Ambient NPC (环境型 NPC)
+梗核心： NPC、加载中（Loading）、默认姿势、背景。
+
+专属描述： A plain, default-style chibi character walking in a straight loop. Neutral, static expression, a floating 'LOADING...' icon above head, subtle and pixelated features, blending perfectly into a busy background, standing still with a dynamic world around them.
+
+（中文参考）： 一个普通的、默认风格的Q版角色在直线循环行走。中性、静态的表情，头顶有一个漂浮的“Loading...”图标，细微和像素化的特征，完美地融入忙碌的背景，静静地站着，周围是一个动态的世界。
+
+12. IRLY / The Earnest Oversharer (真诚过量分享者)
+梗核心： TMI（太详尽）、 puppy eyes（狗狗眼）、全人类、Context。
+
+专属描述： Teary-eyed, wholesome chibi character giving a crushing hug to their smartphone. Exploding with massive speech bubbles labeled 'MY FEELINGS', 'CONTEXT', and 'TMI', big puppy eyes, radiating warm light, too sincere expression.
+
+（中文参考）： 泪眼汪汪、健康的Q版角色正在给智能手机一个致命的拥抱。头顶爆炸出巨大的气泡，标记着“My Feelings”、“Context”和“TMI”，大大的狗狗眼，放射出柔和的光，过度真诚的表情。
+
+13. LOCK / The Boundary Maxxer (边界感拉满的人)
+梗核心： -maxxing、权限、堡垒、指纹解锁。
+
+专属描述： Stoic, high-boundary chibi character wearing stylized riot gear or sitting inside a transparent fortress bubble. Surrounded by holographic lock icons and biometric finger scanners, pushing away a thought bubble with a gloved hand, access denied symbol, stable pose.
+
+（中文参考）： 坚忍、高边界的Q版角色穿着风格化的防暴装备，或者坐在一个透明的堡垒气泡里。被全息锁图标和生物指纹扫描仪包围，用戴着手套的手推开一个气泡，Access Denied（拒绝访问）符号，稳定的姿势。
+
+14. SPIN / The Storyline Producer (剧情线制作人)
+梗核心： Episode、Clapperboard（电影场记板）、Beret（贝雷帽）、剧情、
+
+专属描述： Dynamic chibi character with a beret and a scarf. Holding a director's clapperboard labeled 'MY DAY: EP.1'. Everything in their mundane surroundings (coffee cup, bus stop, dog) has a cinematic glow and plot-twist text floating above them, dramatic pose like a dynamic movie poster.
+
+（中文参考）： 动态的Q版角色，戴着贝雷帽和围巾。拿着一个标记为“My Day: Ep.1”的导演场记板。普通周围的一切（咖啡杯、公交车站、狗）都有电影般的光辉，并且头顶飘浮着“剧情反转”的文字，动态的姿势，像一个动态的电影海报。
