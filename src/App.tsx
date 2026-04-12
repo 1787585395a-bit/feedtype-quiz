@@ -351,7 +351,7 @@ function App() {
     (route.view === "result" && getResultByCode(route.code)) ||
     (resultSnapshot ? getResultByCode(resultSnapshot.code) : undefined);
   const resultImagePath = activeResult
-    ? `/archetypes/${activeResult.code.toLowerCase()}.png`
+    ? `${import.meta.env.BASE_URL}archetypes/${activeResult.code.toLowerCase()}.png`
     : null;
   const resultThemeStyle = getResultThemeStyle(activeResult?.code);
 
