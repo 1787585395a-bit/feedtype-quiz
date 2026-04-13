@@ -5,30 +5,33 @@ export type DimensionKey =
   | "conflictMode"
   | "delusionLevel";
 
+export type Locale = "en" | "zh-CN";
+export type Localized<T> = Record<Locale, T>;
+
 export type DimensionScores = Record<DimensionKey, number>;
 
 export type AnswerOption = {
   id: string;
-  label: string;
+  label: Localized<string>;
   weights: Partial<DimensionScores>;
 };
 
 export type Question = {
   id: string;
-  prompt: string;
-  context?: string;
+  prompt: Localized<string>;
+  context?: Localized<string>;
   options: AnswerOption[];
 };
 
 export type ResultProfile = {
   code: string;
-  title: string;
+  title: Localized<string>;
   artCode?: string;
-  subtitle: string;
-  vibe: string;
-  summary: string;
-  punchline: string;
-  traits: string[];
-  shareText: string;
+  subtitle: Localized<string>;
+  vibe: Localized<string>;
+  summary: Localized<string>;
+  punchline: Localized<string>;
+  traits: Localized<string[]>;
+  shareText: Localized<string>;
   targets: DimensionScores;
 };

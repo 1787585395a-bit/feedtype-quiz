@@ -78,6 +78,13 @@ blockquote {
   margin-bottom: 24px;
 }
 
+.site-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
 .brand {
   border: none;
   background: transparent;
@@ -94,6 +101,41 @@ blockquote {
   text-align: right;
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.locale-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(17, 19, 21, 0.06);
+}
+
+.locale-toggle {
+  min-width: 60px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.locale-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.locale-toggle--active {
+  background: var(--ink);
+  color: #fff8f1;
 }
 
 .panel {
@@ -312,6 +354,12 @@ blockquote {
   margin-top: 28px;
 }
 
+.question-context {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .option-list {
   display: grid;
   gap: 14px;
@@ -512,6 +560,55 @@ blockquote {
   margin: 0 auto;
 }
 
+.app-shell[lang="zh-CN"] {
+  font-family:
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Noto Sans CJK SC",
+    "Segoe UI",
+    sans-serif;
+}
+
+.app-shell[lang="zh-CN"] .brand {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.app-shell[lang="zh-CN"] .eyebrow,
+.app-shell[lang="zh-CN"] .mini-label,
+.app-shell[lang="zh-CN"] .axis-number {
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+.app-shell[lang="zh-CN"] .hero-panel h1,
+.app-shell[lang="zh-CN"] .question-panel h1,
+.app-shell[lang="zh-CN"] .result-card h1,
+.app-shell[lang="zh-CN"] .empty-panel h1,
+.app-shell[lang="zh-CN"] .axis-card h2,
+.app-shell[lang="zh-CN"] .score-panel h2,
+.app-shell[lang="zh-CN"] .result-quote {
+  font-family:
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Noto Sans CJK SC",
+    "Segoe UI",
+    sans-serif;
+}
+
+.app-shell[lang="zh-CN"] .hero-panel h1,
+.app-shell[lang="zh-CN"] .question-panel h1,
+.app-shell[lang="zh-CN"] .result-card h1,
+.app-shell[lang="zh-CN"] .empty-panel h1 {
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.app-shell[lang="zh-CN"] .result-quote {
+  line-height: 1.35;
+}
+
 @media (max-width: 980px) {
   .axis-grid {
     grid-template-columns: 1fr;
@@ -535,8 +632,21 @@ blockquote {
     align-items: start;
   }
 
+  .site-meta {
+    width: 100%;
+    align-items: flex-start;
+  }
+
   .site-kicker {
     text-align: left;
+  }
+
+  .locale-switch {
+    width: 100%;
+  }
+
+  .locale-toggle {
+    flex: 1 1 0;
   }
 
   .hero-panel,

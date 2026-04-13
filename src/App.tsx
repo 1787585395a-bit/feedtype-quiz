@@ -1,16 +1,13 @@
 import { useEffect, useState, type CSSProperties } from "react";
+import { uiCopy, dimensionLabelsByLocale } from "./data/i18n";
 import { questions } from "./data/questions";
 import { results } from "./data/results";
-import {
-  calculateScores,
-  dimensionKeys,
-  dimensionLabels,
-  resolveResult,
-} from "./lib/scoring";
-import type { DimensionScores, ResultProfile } from "./types";
+import { calculateScores, dimensionKeys, resolveResult } from "./lib/scoring";
+import type { DimensionScores, Locale, Localized, ResultProfile } from "./types";
 
 const QUIZ_STORAGE_KEY = "feedtype.quiz.answers";
 const RESULT_STORAGE_KEY = "feedtype.quiz.result";
+const LOCALE_STORAGE_KEY = "feedtype.quiz.locale";
 
 type Route =
   | { view: "landing" }
@@ -176,6 +173,48 @@ const removeStoredValue = (key: string): void => {
   }
 };
 
+const isLocale = (value: string): value is Locale => value === "en" || value === "zh-CN";
+
+const getStoredLocale = (): Locale | null => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const raw = window.sessionStorage.getItem(LOCALE_STORAGE_KEY);
+    return raw && isLocale(raw) ? raw : null;
+  } catch {
+    return null;
+  }
+};
+
+const detectBrowserLocale = (): Locale => {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const candidates =
+    window.navigator.languages && window.navigator.languages.length > 0
+      ? window.navigator.languages
+      : [window.navigator.language];
+
+  return candidates.some((language) => language.toLowerCase().startsWith("zh"))
+    ? "zh-CN"
+    : "en";
+};
+
+const writeStoredLocale = (locale: Locale): void => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  try {
+    window.sessionStorage.setItem(LOCALE_STORAGE_KEY, locale);
+  } catch {
+    // Ignore storage failures and keep the in-memory session working.
+  }
+};
+
 const parseRoute = (): Route => {
   if (typeof window === "undefined") {
     return { view: "landing" };
@@ -243,6 +282,7 @@ const getResultThemeStyle = (code?: string): CSSProperties => {
 };
 
 function App() {
+  const [locale, setLocale] = useState<Locale>(() => getStoredLocale() ?? detectBrowserLocale());
   const [route, setRoute] = useState<Route>(() => parseRoute());
   const [answers, setAnswers] = useState<Record<string, string>>(() => getStoredAnswers());
   const [questionIndex, setQuestionIndex] = useState<number>(() =>
@@ -252,6 +292,10 @@ function App() {
     getStoredResult(),
   );
   const [imageUnavailable, setImageUnavailable] = useState(false);
+
+  useEffect(() => {
+    writeStoredLocale(locale);
+  }, [locale]);
 
   useEffect(() => {
     const onHashChange = () => {
@@ -276,6 +320,10 @@ function App() {
   useEffect(() => {
     setImageUnavailable(false);
   }, [route.view === "result" ? route.code : resultSnapshot?.code]);
+
+  const pick = <T,>(value: Localized<T>): T => value[locale];
+  const copy = uiCopy[locale];
+  const dimensionLabels = dimensionLabelsByLocale[locale];
 
   const resetQuiz = () => {
     setAnswers({});
@@ -357,65 +405,63 @@ function App() {
   const resultThemeStyle = getResultThemeStyle(resultArtCode);
 
   return (
-    <div className="app-shell">
+    <div className="app-shell" lang={locale}>
       <header className="site-bar">
         <button className="brand" type="button" onClick={goHome}>
           FEEDTYPE
         </button>
-        <p className="site-kicker">
-          {`internet role audit / ${questions.length} questions / ${results.length} viral types`}
-        </p>
+        <div className="site-meta">
+          <p className="site-kicker">{copy.siteKicker(questions.length, results.length)}</p>
+          <div className="locale-switch" role="group" aria-label={copy.languageSwitchLabel}>
+            <button
+              className={`locale-toggle ${locale === "en" ? "locale-toggle--active" : ""}`}
+              type="button"
+              onClick={() => setLocale("en")}
+            >
+              EN
+            </button>
+            <button
+              className={`locale-toggle ${
+                locale === "zh-CN" ? "locale-toggle--active" : ""
+              }`}
+              type="button"
+              onClick={() => setLocale("zh-CN")}
+            >
+              中文
+            </button>
+          </div>
+        </div>
       </header>
 
       {route.view === "landing" && (
         <main className="hero-grid">
           <section className="panel hero-panel">
-            <span className="eyebrow">A fast internet personality quiz</span>
-            <h1>Find your internet role.</h1>
-            <p className="lead">
-              {`FEEDTYPE sorts you into ${results.length} meme-coded internet identities using posting instinct, social battery, irony armor, conflict temperature, and main-character levels.`}
-            </p>
+            <span className="eyebrow">{copy.heroEyebrow}</span>
+            <h1>{copy.heroTitle}</h1>
+            <p className="lead">{copy.heroLead(results.length)}</p>
 
             <div className="button-row">
               <button className="button button--primary" type="button" onClick={startQuiz}>
-                Start the audit
+                {copy.startQuiz}
               </button>
               {answeredCount > 0 && answeredCount < questions.length && (
                 <button className="button button--secondary" type="button" onClick={resumeQuiz}>
-                  Resume draft
+                  {copy.resumeQuiz}
                 </button>
               )}
             </div>
 
-            <p className="disclaimer">For fun only. Not psychological advice.</p>
+            <p className="disclaimer">{copy.disclaimer}</p>
           </section>
 
           <section className="axis-grid">
-            <article className="panel axis-card">
-              <span className="axis-number">01</span>
-              <h2>Posting Instinct</h2>
-              <p>From stealth mode to full-time feed maintenance.</p>
-            </article>
-            <article className="panel axis-card">
-              <span className="axis-number">02</span>
-              <h2>Social Battery</h2>
-              <p>From selective appearances to active scene management.</p>
-            </article>
-            <article className="panel axis-card">
-              <span className="axis-number">03</span>
-              <h2>Irony Armor</h2>
-              <p>From sincere posting to emotionally protected bit-making.</p>
-            </article>
-            <article className="panel axis-card">
-              <span className="axis-number">04</span>
-              <h2>Conflict Temperature</h2>
-              <p>From silent blocking to timeline-ready intervention.</p>
-            </article>
-            <article className="panel axis-card">
-              <span className="axis-number">05</span>
-              <h2>Main Character Levels</h2>
-              <p>From grounded realism to premium narrative projection.</p>
-            </article>
+            {copy.axisCards.map((axisCard, index) => (
+              <article key={axisCard.title} className="panel axis-card">
+                <span className="axis-number">{String(index + 1).padStart(2, "0")}</span>
+                <h2>{axisCard.title}</h2>
+                <p>{axisCard.description}</p>
+              </article>
+            ))}
           </section>
         </main>
       )}
@@ -424,14 +470,12 @@ function App() {
         <main className="panel quiz-panel">
           <div className="quiz-meta">
             <div>
-              <span className="eyebrow">Question {questionIndex + 1}</span>
+              <span className="eyebrow">{copy.questionLabel(questionIndex + 1)}</span>
               <p className="quiz-count">
-                {answeredCount} answered / {questions.length} total
+                {copy.answeredCount(answeredCount, questions.length)}
               </p>
             </div>
-            <p className="quiz-instruction">
-              Pick your first reflex, not your PR-safe answer.
-            </p>
+            <p className="quiz-instruction">{copy.quizInstruction}</p>
           </div>
 
           <div className="progress-track" aria-hidden="true">
@@ -439,7 +483,10 @@ function App() {
           </div>
 
           <section className="question-panel">
-            <h1>{currentQuestion.prompt}</h1>
+            <h1>{pick(currentQuestion.prompt)}</h1>
+            {currentQuestion.context && (
+              <p className="question-context">{pick(currentQuestion.context)}</p>
+            )}
 
             <div className="option-list">
               {currentQuestion.options.map((option) => (
@@ -452,7 +499,7 @@ function App() {
                   onClick={() => submitAnswer(option.id)}
                 >
                   <span className="option-index">{option.id.toUpperCase()}</span>
-                  <span>{option.label}</span>
+                  <span>{pick(option.label)}</span>
                 </button>
               ))}
             </div>
@@ -465,10 +512,10 @@ function App() {
               onClick={goBack}
               disabled={questionIndex === 0}
             >
-              Back
+              {copy.back}
             </button>
             <button className="button button--ghost" type="button" onClick={goHome}>
-              Exit
+              {copy.exit}
             </button>
           </div>
         </main>
@@ -478,89 +525,85 @@ function App() {
         <main className="result-layout" style={resultThemeStyle}>
           {!activeResult || !resultSnapshot ? (
             <section className="panel empty-panel">
-              <span className="eyebrow">No active result</span>
-              <h1>The result card needs a completed run.</h1>
-              <p>Start a new quiz to generate a fresh score profile and internet role.</p>
+              <span className="eyebrow">{copy.emptyEyebrow}</span>
+              <h1>{copy.emptyTitle}</h1>
+              <p>{copy.emptyBody}</p>
               <button className="button button--primary" type="button" onClick={startQuiz}>
-                Start over
+                {copy.startOver}
               </button>
             </section>
           ) : (
-            <>
-              <section className="panel result-card">
-                <div className="result-hero">
-                  <section className="result-visual-panel">
-                    <div className="character-art-stage">
-                      <div className="character-art-frame">
-                        {imageUnavailable ? (
-                          <div className="character-art character-art--fallback">
-                            Character image not generated on this machine yet.
-                          </div>
-                        ) : (
-                          <img
-                            className="character-art"
-                            src={resultImagePath ?? undefined}
-                            alt={`${activeResult.title} character render`}
-                            loading="eager"
-                            onError={() => setImageUnavailable(true)}
-                          />
-                        )}
-                      </div>
-                    </div>
-                  </section>
-
-                  <section className="result-copy-panel">
-                    <span className="eyebrow">Your result</span>
-                    <h1>{activeResult.title}</h1>
-                    <p className="result-subtitle">{activeResult.subtitle}</p>
-                    <p className="result-summary">{activeResult.summary}</p>
-
-                    <blockquote className="result-quote">{activeResult.punchline}</blockquote>
-
-                    <div className="tag-row">
-                      {activeResult.traits.map((trait) => (
-                        <span key={trait} className="tag-chip">
-                          {trait}
-                        </span>
-                      ))}
-                    </div>
-                  </section>
-                </div>
-
-                <section className="panel score-panel score-panel--embedded">
-                  <span className="eyebrow">Your feed profile</span>
-                  <h2>Five-axis readout</h2>
-                  <p className="score-intro">
-                    {`This result is matched against ${results.length} viral types using normalized scores across the quiz's five behavior axes.`}
-                  </p>
-
-                  <div className="meter-list">
-                    {dimensionKeys.map((dimension) => (
-                      <div key={dimension} className="meter-row">
-                        <div className="meter-head">
-                          <span>{dimensionLabels[dimension]}</span>
-                          <strong>{resultSnapshot.scores[dimension]}</strong>
+            <section className="panel result-card">
+              <div className="result-hero">
+                <section className="result-visual-panel">
+                  <div className="character-art-stage">
+                    <div className="character-art-frame">
+                      {imageUnavailable ? (
+                        <div className="character-art character-art--fallback">
+                          {locale === "en"
+                            ? "Character image is unavailable on this device."
+                            : "当前设备未能加载这张角色图片。"}
                         </div>
-                        <div className="meter-track" aria-hidden="true">
-                          <div
-                            className="meter-fill"
-                            style={{ width: `${resultSnapshot.scores[dimension]}%` }}
-                          />
-                        </div>
-                      </div>
+                      ) : (
+                        <img
+                          className="character-art"
+                          src={resultImagePath ?? undefined}
+                          alt={copy.characterAlt(pick(activeResult.title))}
+                          loading="eager"
+                          onError={() => setImageUnavailable(true)}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </section>
+
+                <section className="result-copy-panel">
+                  <span className="eyebrow">{copy.resultEyebrow}</span>
+                  <h1>{pick(activeResult.title)}</h1>
+                  <p className="result-subtitle">{pick(activeResult.subtitle)}</p>
+                  <p className="result-summary">{pick(activeResult.summary)}</p>
+
+                  <blockquote className="result-quote">
+                    {pick(activeResult.punchline)}
+                  </blockquote>
+
+                  <div className="tag-row">
+                    {pick(activeResult.traits).map((trait) => (
+                      <span key={trait} className="tag-chip">
+                        {trait}
+                      </span>
                     ))}
                   </div>
-
-                  <button
-                    className="button button--ghost button--full"
-                    type="button"
-                    onClick={goHome}
-                  >
-                    Back to landing
-                  </button>
                 </section>
+              </div>
+
+              <section className="panel score-panel score-panel--embedded">
+                <span className="eyebrow">{copy.feedProfileEyebrow}</span>
+                <h2>{copy.scoreTitle}</h2>
+                <p className="score-intro">{copy.scoreIntro(results.length)}</p>
+
+                <div className="meter-list">
+                  {dimensionKeys.map((dimension) => (
+                    <div key={dimension} className="meter-row">
+                      <div className="meter-head">
+                        <span>{dimensionLabels[dimension]}</span>
+                        <strong>{resultSnapshot.scores[dimension]}</strong>
+                      </div>
+                      <div className="meter-track" aria-hidden="true">
+                        <div
+                          className="meter-fill"
+                          style={{ width: `${resultSnapshot.scores[dimension]}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="button button--ghost button--full" type="button" onClick={goHome}>
+                  {copy.backToLanding}
+                </button>
               </section>
-            </>
+            </section>
           )}
         </main>
       )}
