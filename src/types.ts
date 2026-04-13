@@ -23,6 +23,7 @@ export type Question = {
 export type ResultProfile = {
   code: string;
   title: string;
+  artCode?: string;
   subtitle: string;
   vibe: string;
   summary: string;

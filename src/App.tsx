@@ -350,10 +350,11 @@ function App() {
   const activeResult =
     (route.view === "result" && getResultByCode(route.code)) ||
     (resultSnapshot ? getResultByCode(resultSnapshot.code) : undefined);
-  const resultImagePath = activeResult
-    ? `${import.meta.env.BASE_URL}archetypes/${activeResult.code.toLowerCase()}.png`
+  const resultArtCode = activeResult?.artCode ?? activeResult?.code;
+  const resultImagePath = resultArtCode
+    ? `${import.meta.env.BASE_URL}archetypes/${resultArtCode.toLowerCase()}.png`
     : null;
-  const resultThemeStyle = getResultThemeStyle(activeResult?.code);
+  const resultThemeStyle = getResultThemeStyle(resultArtCode);
 
   return (
     <div className="app-shell">
@@ -361,18 +362,18 @@ function App() {
         <button className="brand" type="button" onClick={goHome}>
           FEEDTYPE
         </button>
-        <p className="site-kicker">internet type audit / 28 questions / for fun only</p>
+        <p className="site-kicker">
+          {`internet role audit / ${questions.length} questions / ${results.length} viral types`}
+        </p>
       </header>
 
       {route.view === "landing" && (
         <main className="hero-grid">
           <section className="panel hero-panel">
             <span className="eyebrow">Built for Stories, screenshots, and selective oversharing</span>
-            <h1>Find out what kind of internet menace you are.</h1>
+            <h1>Find the screenshot-ready internet role you keep becoming.</h1>
             <p className="lead">
-              FEEDTYPE is a fast meme-native personality quiz shaped around posting
-              instinct, social battery, irony armor, conflict temperature, and main-character
-              levels.
+              {`FEEDTYPE sorts you into ${results.length} meme-coded internet identities using posting instinct, social battery, irony armor, conflict temperature, and main-character levels.`}
             </p>
 
             <div className="button-row">
@@ -429,7 +430,7 @@ function App() {
               </p>
             </div>
             <p className="quiz-instruction">
-              Pick your default move, not your most admirable one.
+              Pick your first reflex, not your PR-safe answer.
             </p>
           </div>
 
@@ -479,7 +480,7 @@ function App() {
             <section className="panel empty-panel">
               <span className="eyebrow">No active result</span>
               <h1>The result card needs a completed run.</h1>
-              <p>Start a new quiz to generate a fresh score profile and archetype.</p>
+              <p>Start a new quiz to generate a fresh score profile and internet role.</p>
               <button className="button button--primary" type="button" onClick={startQuiz}>
                 Start over
               </button>
@@ -509,7 +510,7 @@ function App() {
                   </section>
 
                   <section className="result-copy-panel">
-                    <span className="eyebrow">Matched Archetype</span>
+                    <span className="eyebrow">Your result</span>
                     <h1>{activeResult.title}</h1>
                     <p className="result-subtitle">{activeResult.subtitle}</p>
                     <p className="result-summary">{activeResult.summary}</p>
@@ -530,8 +531,7 @@ function App() {
                   <span className="eyebrow">Your feed profile</span>
                   <h2>Five-axis readout</h2>
                   <p className="score-intro">
-                    This archetype is matched against 14 profiles using normalized scores across
-                    the quiz&apos;s five behavior axes.
+                    {`This result is matched against ${results.length} viral types using normalized scores across the quiz's five behavior axes.`}
                   </p>
 
                   <div className="meter-list">

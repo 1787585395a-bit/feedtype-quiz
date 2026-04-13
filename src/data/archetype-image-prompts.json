@@ -1,0 +1,101 @@
+{
+  "basePrompt": "A high-quality 3D rendered vinyl toy of a chibi character, blind box style, cute, big head, small body, expressive face, glossy finish, soft lighting, vibrant pastel colors, clean premium background, intricate details related to the character, stylized illustration.",
+  "archetypes": [
+    {
+      "code": "AURA",
+      "persona": "Soft-Launch Weather System",
+      "description": "Elegant chibi figure with a warm halo aura, one ringed hand holding a takeaway coffee, face partly veiled by translucent mist, blurred phone-story glow behind them, sparkling fragments orbiting the silhouette, mysterious smile, calm but dangerous social energy.",
+      "designNote": "Keep the face partially veiled but still attractive and readable. No letters or captions anywhere."
+    },
+    {
+      "code": "DELU",
+      "persona": "Main Character Malware",
+      "description": "Glamorous chibi figure striding across a red carpet that appears under their feet, wearing an impractical tiara and fashion-forward outfit, grocery bag turned into a luxury prop, movie cameras and spotlights floating around, blissed-out expression, cosmic self-belief.",
+      "designNote": "Sell delusional cinematic confidence, not parody. No written signage or text props."
+    },
+    {
+      "code": "COPE",
+      "persona": "Lore Recycling Unit",
+      "description": "Stylish but emotionally tired chibi figure in glasses and dramatic scarf, seated atop layered thought bubbles and abstract note cards, one hand on chin in philosopher pose, symbolic flowchart nodes and arrows floating overhead, cynical but composed expression.",
+      "designNote": "Use abstract diagrams, not readable labels. Make the mood witty and polished rather than sad."
+    },
+    {
+      "code": "CRSH",
+      "persona": "Comment Section Bossfight",
+      "description": "Furious yet polished chibi figure leaning over a glowing keyboard, steam and sparks lifting off the scene, long timestamp receipt ribbons flying outward, sharp stare, one hand mid-slam, comment-battle atmosphere with bossfight intensity.",
+      "designNote": "Use receipts, alert cards, and flame icons with no readable comments or words."
+    },
+    {
+      "code": "MUTE",
+      "persona": "Seen-Zone Royalty",
+      "description": "Cool chibi figure in indoor sunglasses sitting cross-legged like a celebrity in a private lounge, ignored notifications exploding quietly at the side, double-check icons and muted message blocks drifting around, relaxed pose, expensive low-access energy.",
+      "designNote": "Premium low-access aura, no text bubbles or readable UI."
+    },
+    {
+      "code": "COOK",
+      "persona": "Group Chat Arsonist",
+      "description": "Mischievous chibi figure in a chef hat and sharp streetwear apron, stirring a glowing cauldron full of nightlife icons, sparks, hearts, and small chaos symbols, lighter in the off-hand, grin that suggests the plan is getting worse in a fun way.",
+      "designNote": "Make it social-chaos chic, not literal kitchen comedy. Remove all letters from props and clothing."
+    },
+    {
+      "code": "CTRL",
+      "persona": "Calendar Cartel Energy",
+      "description": "Crisp, managerial chibi figure with stopwatch, clipboard, and floating timeline ribbons, confidently pulling back a curtain to reveal neatly arranged plan cards and event markers, poised stance, elegant logistics-as-charisma energy.",
+      "designNote": "Use clean planning symbols, charts, and curtains without any readable schedule text."
+    },
+    {
+      "code": "LURK",
+      "persona": "Silent Analytics Demon",
+      "description": "Sneaky chibi figure in an oversized hoodie peeking from behind a giant floating smartphone, screenshot flash firing, folder icons and tiny archive symbols hovering nearby, wide alert eyes, stealth posture, hyper-aware but socially invisible energy.",
+      "designNote": "Surveillance vibe without menace. No readable app text or numbers."
+    },
+    {
+      "code": "SPIN",
+      "persona": "Narrative Over-Editing Software",
+      "description": "Expressive chibi director figure in a beret and scarf holding a glossy clapperboard shape, everyday props like a coffee cup and bus stop glowing like plot devices, swirling cinematic ribbons and callback symbols, dramatic movie-poster pose.",
+      "designNote": "Everything should feel like premium lore. No episode labels or readable words."
+    },
+    {
+      "code": "FEED",
+      "persona": "Algorithm Hobbyist",
+      "description": "Efficient but stylish chibi content creature with ring light, tripod camera, floating crop guides, progress arcs, and social metric symbols, turning a mundane scene into something iconic, focused eyes, highly optimized posture.",
+      "designNote": "Use metric and interface iconography without labels, numerals, or words."
+    },
+    {
+      "code": "LOCK",
+      "persona": "Emotional Paywall Enabled",
+      "description": "Stoic chibi figure inside a transparent defensive bubble, surrounded by holographic locks, shield shapes, biometric scan motifs, and access-barrier light beams, one gloved hand pushing away an incoming thought bubble, stable and unreadable stance.",
+      "designNote": "Make it sleek and premium rather than militaristic. No interface text."
+    },
+    {
+      "code": "REPL",
+      "persona": "Room-Optimize Charmer",
+      "description": "Highly social chibi figure framed by mirrored panels and floating reaction icons, outfit shifting through tasteful accent colors as they pivot toward different mini spotlights, open arms, reassuring grin, adaptive charisma running at full speed.",
+      "designNote": "Show social mirroring with symbols and posture, not readable chat text."
+    },
+    {
+      "code": "NPCX",
+      "persona": "Selectively Rendered Side Character",
+      "description": "Plain-faced but secretly iconic chibi figure with neutral expression, subtle pixel textures, loading-ring halo, and a soft blurred world moving dramatically around them, hands in pockets, understated posture, hidden-lore energy.",
+      "designNote": "Keep them visually minimal but still lovable. No readable loading text."
+    },
+    {
+      "code": "IRLY",
+      "persona": "Oversharing Without Witness Protection",
+      "description": "Warm, teary-eyed chibi figure hugging a glowing smartphone while oversized translucent speech bubbles, hearts, and context-cloud shapes spill outward, sincere puppy-eye expression, bright emotional core, dangerous honesty made cute.",
+      "designNote": "Use speech-bubble shapes only, no letters or captions."
+    },
+    {
+      "code": "BAIT",
+      "persona": "Soft-Launch Fishing Kit",
+      "description": "Sly chibi figure holding a fashionable fishing rod tipped with a glowing heart-notification lure, elegant trap-like story frames floating around, half-smile, calculated casualness, glossy charms and hook motifs suggesting strategic attention farming.",
+      "designNote": "Sell strategic thirst-trap energy with symbols only. No written bait captions or readable notification text."
+    },
+    {
+      "code": "GLOW",
+      "persona": "Accidental Icon Behavior",
+      "description": "Casual but devastatingly magnetic chibi figure in clean, expensive-looking basics, soft spotlight bloom around them, subtle wind motion in hair and clothing, people-free scene that still feels socially conquered, low-effort celestial charisma.",
+      "designNote": "Make the power look effortless. No crowns, no text, no obvious gimmicks."
+    }
+  ]
+}

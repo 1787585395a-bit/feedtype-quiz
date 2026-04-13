@@ -6,6 +6,7 @@ const dataDir = path.join(rootDir, "src", "data");
 const outputDir = path.join(rootDir, "output", "imagegen", "archetypes");
 const publicDir = path.join(rootDir, "public", "archetypes");
 const manifestPath = path.join(outputDir, "prompts.json");
+const preferredPromptJsonPath = path.join(rootDir, "src", "data", "archetype-image-prompts.json");
 const frontendPalette = {
   paper: "#f5efe5",
   card: "#fffaf2",
@@ -138,6 +139,10 @@ const resolvePromptFile = async () => {
     return path.isAbsolute(override) ? override : path.join(rootDir, override);
   }
 
+  if (await fileExists(preferredPromptJsonPath)) {
+    return preferredPromptJsonPath;
+  }
+
   const entries = await fs.readdir(dataDir, { withFileTypes: true });
   const promptFiles = entries.filter(
     (entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".txt"),
@@ -150,6 +155,57 @@ const resolvePromptFile = async () => {
   }
 
   return path.join(dataDir, promptFiles[0].name);
+};
+
+const parsePromptJson = (content) => {
+  const payload = JSON.parse(content);
+  const basePrompt = payload?.basePrompt?.trim();
+  const archetypes = payload?.archetypes;
+
+  if (!basePrompt) {
+    throw new Error("Prompt JSON is missing basePrompt.");
+  }
+
+  if (!Array.isArray(archetypes) || archetypes.length === 0) {
+    throw new Error("Prompt JSON is missing archetypes.");
+  }
+
+  return archetypes.map((entry) => {
+    const code = String(entry.code ?? "").trim().toUpperCase();
+    const title = String(entry.persona ?? entry.title ?? "").trim();
+    const exclusiveDescription = String(entry.description ?? "").trim();
+    const extraVisualNote =
+      String(entry.designNote ?? "").trim() ||
+      archetypeVisualNotes[code] ||
+      "Use visual symbols instead of text.";
+
+    if (!code || !title || !exclusiveDescription) {
+      throw new Error(`Prompt JSON entry is incomplete for code "${code || "unknown"}".`);
+    }
+
+    const prompt = [
+      "Use case: stylized-concept",
+      "Asset type: website personality-quiz result illustration",
+      `Primary request: Create the collectible character image for ${code} / ${title}.`,
+      `Scene/backdrop: clean premium studio setup with a soft cream paper backdrop in ${frontendPalette.paper}, subtle card warmth from ${frontendPalette.card}, and a very soft radial gradient haze inspired by the FEEDTYPE UI.`,
+      `Subject: ${title}. ${exclusiveDescription}`,
+      `Design note: ${extraVisualNote}`,
+      `Style/medium: ${basePrompt} Premium 3D rendered blind-box collectible, glossy vinyl finish, website-ready stylized illustration.`,
+      "Composition/framing: centered full-body single character, square 1:1 composition, readable silhouette, generous breathing room.",
+      "Lighting/mood: soft studio lighting, playful but polished, editorial, internet-native.",
+      `Color palette: harmonious FEEDTYPE palette only. Base neutrals ${frontendPalette.paper}, ${frontendPalette.card}, ${frontendPalette.ink}, ${frontendPalette.muted}; controlled accents ${frontendPalette.signal}, ${frontendPalette.signalDeep}, ${frontendPalette.acid}, ${frontendPalette.pool}. Keep saturation elegant and balanced, not neon-chaotic.`,
+      "Materials/textures: glossy toy plastic, crisp fabric texture on clothing and props, clean shadows, high micro-detail.",
+      "Constraints: one character only; no text; no watermark; no logo; no extra characters; no busy background; keep the archetype prop readable; keep enough negative space for a rounded-corner card crop in the website result panel.",
+      "Avoid: photoreal skin, horror styling, muddy colors, cluttered composition, dark cinematic background, off-brand purple, harsh black backgrounds, colors outside the FEEDTYPE palette unless used as tiny neutral details, any readable letters, numbers, UI labels, captions, logos, watermarks, or written signs.",
+    ].join("\n");
+
+    return {
+      code,
+      title,
+      exclusiveDescription,
+      prompt,
+    };
+  });
 };
 
 const parsePromptFile = (content) => {
@@ -349,7 +405,9 @@ const main = async () => {
 
   const promptFile = await resolvePromptFile();
   const fileContent = await fs.readFile(promptFile, "utf8");
-  const parsedJobs = parsePromptFile(fileContent);
+  const parsedJobs = promptFile.toLowerCase().endsWith(".json")
+    ? parsePromptJson(fileContent)
+    : parsePromptFile(fileContent);
   const jobs = selectedCode
     ? parsedJobs.filter((job) => job.code === selectedCode)
     : parsedJobs;
