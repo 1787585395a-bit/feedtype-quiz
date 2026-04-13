@@ -453,12 +453,14 @@ blockquote {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .character-art--fallback {
   display: grid;
   place-items: center;
   padding: 28px;
+  border-radius: 20px;
   color: var(--muted);
   text-align: center;
   line-height: 1.5;
