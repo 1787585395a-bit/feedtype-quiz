@@ -370,8 +370,8 @@ function App() {
       {route.view === "landing" && (
         <main className="hero-grid">
           <section className="panel hero-panel">
-            <span className="eyebrow">Built for Stories, screenshots, and selective oversharing</span>
-            <h1>Find the screenshot-ready internet role you keep becoming.</h1>
+            <span className="eyebrow">A fast internet personality quiz</span>
+            <h1>Find your internet role.</h1>
             <p className="lead">
               {`FEEDTYPE sorts you into ${results.length} meme-coded internet identities using posting instinct, social battery, irony armor, conflict temperature, and main-character levels.`}
             </p>
