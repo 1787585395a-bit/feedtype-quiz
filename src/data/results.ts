@@ -41,11 +41,11 @@ export const results: ResultProfile[] = [
       "我测出来是 氛围钓王。原来我不是发动态，我是在投放证据。发给那个总在研究我朋友圈的朋友。",
     ),
     targets: {
-      postingStyle: 65,
-      socialEnergy: 60,
-      ironyLevel: 20,
-      conflictMode: 52,
-      delusionLevel: 61,
+      postingStyle: 66,
+      socialEnergy: 61,
+      ironyLevel: 19,
+      conflictMode: 49,
+      delusionLevel: 64,
     },
   },
   {
