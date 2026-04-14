@@ -41,48 +41,11 @@ export const results: ResultProfile[] = [
       "我测出来是 氛围钓王。原来我不是发动态，我是在投放证据。发给那个总在研究我朋友圈的朋友。",
     ),
     targets: {
-      postingStyle: 44,
-      socialEnergy: 58,
-      ironyLevel: 42,
-      conflictMode: 16,
-      delusionLevel: 84,
-    },
-  },
-  {
-    code: "DELU",
-    title: text("DELU", "主角病王"),
-    subtitle: text("Main character malware.", "人生自带电影旁白。"),
-    vibe: text("Cinematic delulu with suspicious uptime.", "高在线率的主角滤镜。"),
-    summary: text(
-      "You are one of the rare people who can romanticize a grocery run into an origin story. Somewhere between cosmic delusion and premium self-branding, you convinced the universe to keep giving your random Tuesday background music.",
-      "你的人生在你眼里没有日常，只有剧情。买杯咖啡像命运转折，晚回消息像宇宙埋线，别人随口夸你一句都够你脑补一个新人设赛季。你不是简单乐观，你是把自己的人生过成导演剪辑版。",
-    ),
-    punchline: text(
-      "You are not delulu. You are aggressively in beta. Screenshot this and send it to the friend who keeps enabling your lore.",
-      "你不是戏太多，你是天生自带电影旁白。发给那个天天给自己生活配 BGM 的朋友。",
-    ),
-    traits: list(
-      [
-        "romanticizes errands into plot",
-        "hears one compliment and starts a new era",
-        "treats coincidences like universe-sent trailers",
-      ],
-      [
-        "把小事自动升格成命运节点",
-        "别人一句夸奖就能进入新篇章",
-        "最会把巧合脑补成宇宙暗示",
-      ],
-    ),
-    shareText: text(
-      "I got DELU on FEEDTYPE. Apparently my personal mythology has no adult supervision. Screenshot this and send it to the friend who keeps feeding my lore.",
-      "我测出来是 主角病王。原来我的人生旁白根本没有人监管。发给那个一直在帮我加戏的朋友。",
-    ),
-    targets: {
-      postingStyle: 74,
-      socialEnergy: 72,
-      ironyLevel: 14,
-      conflictMode: 30,
-      delusionLevel: 98,
+      postingStyle: 65,
+      socialEnergy: 60,
+      ironyLevel: 20,
+      conflictMode: 52,
+      delusionLevel: 61,
     },
   },
   {
@@ -115,11 +78,11 @@ export const results: ResultProfile[] = [
       "我测出来是 嘴硬文豪。原来我的 coping mechanism 自带排版。发给那个总把情绪写成文案的朋友。",
     ),
     targets: {
-      postingStyle: 56,
-      socialEnergy: 34,
-      ironyLevel: 95,
-      conflictMode: 26,
-      delusionLevel: 42,
+      postingStyle: 48,
+      socialEnergy: 43,
+      ironyLevel: 45,
+      conflictMode: 39,
+      delusionLevel: 40,
     },
   },
   {
@@ -152,11 +115,11 @@ export const results: ResultProfile[] = [
       "我测出来是 评论战神。原来我不是发火，我是给评论区做秩序维护。发给那个平时不说话、一说话就像开庭的朋友。",
     ),
     targets: {
-      postingStyle: 82,
-      socialEnergy: 56,
-      ironyLevel: 48,
-      conflictMode: 96,
-      delusionLevel: 38,
+      postingStyle: 61,
+      socialEnergy: 55,
+      ironyLevel: 21,
+      conflictMode: 71,
+      delusionLevel: 52,
     },
   },
   {
@@ -189,11 +152,11 @@ export const results: ResultProfile[] = [
       "我测出来是 已读贵族。原来我的回复速度已经进化成一种人格标签。发给那个回消息像批奏折的朋友。",
     ),
     targets: {
-      postingStyle: 16,
-      socialEnergy: 22,
-      ironyLevel: 56,
-      conflictMode: 18,
-      delusionLevel: 18,
+      postingStyle: 35,
+      socialEnergy: 34,
+      ironyLevel: 25,
+      conflictMode: 39,
+      delusionLevel: 35,
     },
   },
   {
@@ -226,11 +189,11 @@ export const results: ResultProfile[] = [
       "我测出来是 群聊点火器。原来我是群聊里的公共安全隐患。发给那个总能把普通聚会升级成事故现场的朋友。",
     ),
     targets: {
-      postingStyle: 78,
-      socialEnergy: 94,
-      ironyLevel: 62,
-      conflictMode: 68,
-      delusionLevel: 74,
+      postingStyle: 39,
+      socialEnergy: 41,
+      ironyLevel: 17,
+      conflictMode: 63,
+      delusionLevel: 39,
     },
   },
   {
@@ -263,85 +226,11 @@ export const results: ResultProfile[] = [
       "我测出来是 总控大脑。原来我的控制欲已经开始具备制作价值。发给那个总能把烂尾计划救活的朋友。",
     ),
     targets: {
-      postingStyle: 62,
-      socialEnergy: 62,
-      ironyLevel: 38,
-      conflictMode: 54,
-      delusionLevel: 34,
-    },
-  },
-  {
-    code: "LURK",
-    title: text("LURK", "潜水情报局"),
-    subtitle: text("Silent analytics demon.", "不发声，但全网剧情都在你库里。"),
-    vibe: text("Low-posting, high-surveillance luxury.", "低发帖高监控奢侈型。"),
-    summary: text(
-      "You are one of the rare creatures who can know every subplot without contributing a single pixel. You do not participate in the feed like a normal person; you audit it, file it, and emerge only when the room has already exposed itself.",
-      "你看起来像是没参与，其实全网剧情你一条没落。别人还在热搜底下胡乱猜，你已经从朋友圈、评论区、点赞顺序和一堆边角料里拼完前因后果。你不抢麦，但你是最早知道真相的人。",
-    ),
-    punchline: text(
-      "You don't miss tea. Tea files itself into your system. Screenshot this and send it to the friend who sees everything and says nothing until it matters.",
-      "你不是潜水，你是在默默建情报网。发给那个永远先知道八卦但绝不第一时间出声的人。",
-    ),
-    traits: list(
-      [
-        "knows every breakup before the hard launch",
-        "watches Stories like a silent intern of fate",
-        "posts once a month and still stays informed",
-      ],
-      [
-        "别人还没官宣你已经知道分手了",
-        "刷动态像在做赛博情报整理",
-        "自己发得少但从不信息落后",
-      ],
-    ),
-    shareText: text(
-      "I got LURK on FEEDTYPE. Apparently I'm not offline, just conducting surveillance. Screenshot this and send it to the friend who always knows the lore first.",
-      "我测出来是 潜水情报局。原来我不是不在线，我是在静默监控。发给那个总是最先知道剧情的人。",
-    ),
-    targets: {
-      postingStyle: 8,
-      socialEnergy: 20,
-      ironyLevel: 72,
-      conflictMode: 12,
-      delusionLevel: 24,
-    },
-  },
-  {
-    code: "SPIN",
-    title: text("SPIN", "脑补编剧部"),
-    subtitle: text("Narrative over-editing software.", "生活在你脑子里永远有分镜。"),
-    vibe: text("Every minor event becomes premium lore.", "小事自动升级成长篇剧情。"),
-    summary: text(
-      "You are one of the rare people who can turn a normal Tuesday into a season arc with callbacks. Nothing stays small around you. A text is a signal, a delay is a chapter, and an accident is somehow the cold open.",
-      "你的脑子几乎不会让一件事以“就这样”结束。别人眼里普通的一天，到你这儿会自动长出前情提要、伏笔和反转。你不是单纯爱想太多，你是习惯给生活加镜头语言。",
-    ),
-    punchline: text(
-      "You don't overthink. You storyboard. Screenshot this and send it to the friend who can make a parking ticket sound spiritually important.",
-      "你不是脑补，你是在给人生写分镜。发给那个连迟到都能讲出剧情张力的人。",
-    ),
-    traits: list(
-      [
-        "finds plot in every dumb coincidence",
-        "rewrites tiny moments into cinematic lore",
-        "says 'wait no because actually' before the spiral begins",
-      ],
-      [
-        "最会从巧合里抠出剧情",
-        "再小的事都会被你讲出电影感",
-        "总能在一句“等会其实”后开出新支线",
-      ],
-    ),
-    shareText: text(
-      "I got SPIN on FEEDTYPE. Apparently my overthinking has a writers' room. Screenshot this and send it to the friend who narrates everything like a season finale.",
-      "我测出来是 脑补编剧部。原来我的想太多已经拥有独立编剧团队。发给那个什么事都能讲成剧情的人。",
-    ),
-    targets: {
-      postingStyle: 68,
-      socialEnergy: 58,
-      ironyLevel: 78,
-      conflictMode: 44,
-      delusionLevel: 90,
+      postingStyle: 61,
+      socialEnergy: 55,
+      ironyLevel: 40,
+      conflictMode: 52,
+      delusionLevel: 51,
     },
   },
   {
@@ -374,11 +263,11 @@ export const results: ResultProfile[] = [
       "我测出来是 算法饲养员。原来我对平台的态度已经接近人工喂养。发给那个连买咖啡都像在做内容分发的朋友。",
     ),
     targets: {
-      postingStyle: 94,
-      socialEnergy: 70,
-      ironyLevel: 66,
-      conflictMode: 42,
-      delusionLevel: 58,
+      postingStyle: 59,
+      socialEnergy: 40,
+      ironyLevel: 22,
+      conflictMode: 53,
+      delusionLevel: 47,
     },
   },
   {
@@ -411,85 +300,11 @@ export const results: ResultProfile[] = [
       "我测出来是 边界防火墙。原来我的边界感已经写进了使用协议。发给那个永远不公开完整版的朋友。",
     ),
     targets: {
-      postingStyle: 24,
-      socialEnergy: 18,
-      ironyLevel: 44,
-      conflictMode: 38,
-      delusionLevel: 12,
-    },
-  },
-  {
-    code: "REPL",
-    title: text("REPL", "社交变色龙"),
-    subtitle: text("Social mirror with premium uptime.", "你不是见人说人话，你是见场切频道。"),
-    vibe: text("Charm that adapts faster than software.", "比软件更新更快的社交适配。"),
-    summary: text(
-      "You are one of the rare people who can enter any room and somehow become the exact right flavor of funny. Your danger is that people think you're effortless when actually your charisma is doing live customer support for the whole vibe.",
-      "你进什么场就能切成什么频道，跟什么人说话都能迅速找到最合适的那一版自己。别人会觉得你很自然，但其实你是靠极强的社交感应力在实时调频。你不是讨好型，你是环境适配型。",
-    ),
-    punchline: text(
-      "You don't people-please. You room-optimize. Screenshot this and send it to the friend who can match any table's frequency in under ten seconds.",
-      "你不是见人说人话，你是见什么场就能自动上对味版本。发给那个去到哪都能很快混熟的人。",
-    ),
-    traits: list(
-      [
-        "changes tone flawlessly depending on the room",
-        "knows how to rescue an awkward interaction",
-        "makes everyone feel chosen for five minutes",
-      ],
-      [
-        "跟谁说话都能秒切最合适的语气",
-        "最会把快尬住的场子救回来",
-        "总能让别人短暂感到自己很特别",
-      ],
-    ),
-    shareText: text(
-      "I got REPL on FEEDTYPE. Apparently my personality runs on adaptive software. Screenshot this and send it to the friend who can vibe with literally anyone.",
-      "我测出来是 社交变色龙。原来我的人格底层是实时适配系统。发给那个和谁都能迅速对上频道的朋友。",
-    ),
-    targets: {
-      postingStyle: 60,
-      socialEnergy: 86,
-      ironyLevel: 52,
-      conflictMode: 20,
-      delusionLevel: 48,
-    },
-  },
-  {
-    code: "NPCX",
-    title: text("NPCX", "路人梗王"),
-    subtitle: text("Background character, suspiciously iconic.", "平时像挂件，开口像彩蛋。"),
-    vibe: text("Low-maintenance presence with hidden lore.", "存在感低配，笑点高配。"),
-    summary: text(
-      "You are one of the rare people who look chill enough to be background scenery and then randomly drop a line that resets the room. Your whole thing is acting like an NPC while secretly carrying enough inner plot to fuel three side quests.",
-      "你平时的存在感可能不高，甚至容易被误判成路人挂件，但真正熟的人都知道你是那种一开口就能把全场笑翻的隐藏角色。你不是没内容，你是习惯把好东西憋到最后。",
-    ),
-    punchline: text(
-      "You are not boring. You are selectively rendered. Screenshot this and send it to the friend who seems quiet until they suddenly say the funniest thing all year.",
-      "你不是背景板，你是延迟加载的梗王。发给那个平时安静、开口就接管全场的人。",
-    ),
-    traits: list(
-      [
-        "coasts in silence until the perfect one-liner appears",
-        "keeps the weirdest internal monologue fully private",
-        "gets underestimated and kind of enjoys it",
-      ],
-      [
-        "平时话不多，一开口就正中靶心",
-        "脑内最离谱的内容永远不轻易外泄",
-        "被低估的时候甚至还有点享受",
-      ],
-    ),
-    shareText: text(
-      "I got NPCX on FEEDTYPE. Apparently I'm background coded with illegal amounts of inner lore. Screenshot this and send it to the friend who is secretly the funniest in the room.",
-      "我测出来是 路人梗王。原来我只是看起来像背景板，实际是隐藏笑点供应商。发给那个平时安静、其实最会接梗的朋友。",
-    ),
-    targets: {
-      postingStyle: 14,
-      socialEnergy: 34,
-      ironyLevel: 84,
-      conflictMode: 10,
-      delusionLevel: 10,
+      postingStyle: 46,
+      socialEnergy: 45,
+      ironyLevel: 37,
+      conflictMode: 59,
+      delusionLevel: 39,
     },
   },
   {
@@ -522,48 +337,11 @@ export const results: ResultProfile[] = [
       "我测出来是 真话外放器。原来我的真诚没有护栏。发给那个总是先发真心话再慢慢后悔的朋友。",
     ),
     targets: {
-      postingStyle: 74,
-      socialEnergy: 64,
-      ironyLevel: 12,
-      conflictMode: 46,
-      delusionLevel: 60,
-    },
-  },
-  {
-    code: "BAIT",
-    title: text("BAIT", "赛博下饵机"),
-    subtitle: text("Soft-launch fishing kit.", "你说随便发发，其实全是定向投喂。"),
-    vibe: text("Engagement farming with fake innocence.", "装无辜的精准钓鱼。"),
-    summary: text(
-      "You are one of the rare people who can post something 'casual' that is obviously a trap for attention, replies, and very specific viewers. You pretend to be surprised every time the bait works, which is honestly your most toxic talent.",
-      "你最会的不是发内容，而是下套。你嘴上说随便发发，实际谁该看到、谁会来问、谁会被钓出来，你心里早就排过一遍。最绝的是你每次还演得像真没想到有人会上钩。",
-    ),
-    punchline: text(
-      "You are not subtle. You are strategic in lowercase. Screenshot this and send it to the friend who says 'random' right before dropping an obvious trap post.",
-      "你不是随手发，你是在赛博下饵。发给那个每条朋友圈都像精心布置过的朋友。",
-    ),
-    traits: list(
-      [
-        "posts one loaded sentence and waits for pings",
-        "acts accidental while aiming with both eyes open",
-        "knows exactly who each Story is for",
-      ],
-      [
-        "一句看似随意的话能钓出整串回复",
-        "嘴上说随机，眼睛早就瞄准目标",
-        "每条动态发出去前都知道是在给谁看",
-      ],
-    ),
-    shareText: text(
-      "I got BAIT on FEEDTYPE. Apparently my 'casual' posts are felony-level setup. Screenshot this and send it to the friend who keeps posting obvious traps.",
-      "我测出来是 赛博下饵机。原来我那些“随便发发”的动态全是钓鱼现场。发给那个每条朋友圈都像有目标受众的朋友。",
-    ),
-    targets: {
-      postingStyle: 88,
-      socialEnergy: 52,
-      ironyLevel: 70,
-      conflictMode: 54,
-      delusionLevel: 80,
+      postingStyle: 44,
+      socialEnergy: 53,
+      ironyLevel: 21,
+      conflictMode: 50,
+      delusionLevel: 50,
     },
   },
   {
@@ -596,11 +374,11 @@ export const results: ResultProfile[] = [
       "我测出来是 低耗发光体。原来我最大的本事是没怎么用力就赢了。发给那个明明很松弛却总能吸走视线的朋友。",
     ),
     targets: {
-      postingStyle: 46,
-      socialEnergy: 78,
-      ironyLevel: 36,
-      conflictMode: 16,
-      delusionLevel: 70,
+      postingStyle: 54,
+      socialEnergy: 46,
+      ironyLevel: 25,
+      conflictMode: 34,
+      delusionLevel: 48,
     },
   },
 ];
